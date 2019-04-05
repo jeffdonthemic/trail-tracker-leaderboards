@@ -1,0 +1,32 @@
+<template>
+  <lightning-card title={title} icon-name="custom:custom48">
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+      <!-- With an avatar -->
+      <div class="slds-p-around_small lgc-bg">
+          <template for:each={users.data} for:item="user">
+                <lightning-tile label={user.Name} href={user.trailheadapp__Profile_URL__c} type="media" key={user.Id}>
+                    <lightning-avatar slot="media" src={user.trailheadapp__Avatar__c} fallback-icon-name="standard:user" alternative-text={user.Name}></lightning-avatar>
+                    <span>{user.trailheadapp__Completed__c} badges. {user.trailheadapp__In_Progress__c} in progress.</span>
+                    <span class="slds-float_right slds-p-right_large">
+                      <strong><lightning-formatted-number value={user.trailheadapp__Total_Points__c}></lightning-formatted-number> points</strong>
+                    </span>
+                    <div></div>
+                    <div class="slds-m-top_xx-small slds-m-bottom_x-small">
+                        <lightning-badge label={user.trailheadapp__Rank__c}></lightning-badge>
+                    </div>
+                </lightning-tile>
+          </template>
+      </div>
+  </div>
+
+  <div class="slds-p-horizontal_small">
+    <lightning-combobox
+      name="leaderboard"
+      value={selected}
+      options={leaderboards}
+      onchange={handleLeaderboardChange} >
+    </lightning-combobox>
+  </div>
+
+  </lightning-card>
+</template>
