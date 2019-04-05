@@ -1,9 +1,5 @@
-# SFDX App
+# Learderboard Component for Trail Tracker
 
-## Dev, Build and Test
+Built with Lightning Web Components for Trailhackers '19.
 
-## Resources
-
-## Description of Files and Directories
-
-## Issues
+![lwc leaderboard component](https://raw.githubusercontent.com/jeffdonthemic/trail-tracker-leaderboards/master/lwc-screenshot.png "lwc leaderboard component")
